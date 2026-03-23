@@ -1,6 +1,11 @@
-﻿namespace CheckGit.Repositories
+﻿using CheckGit.Models;
+
+namespace CheckGit.Repositories
 {
-    public class IStudentRepository
+    public interface IStudentRepository
     {
+        List<Student> GetAll();
+        void Add(Student student);
+        void Delete(int id);
     }
 }

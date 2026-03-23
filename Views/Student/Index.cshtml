@@ -1,6 +1,22 @@
-﻿namespace CheckGit.Views.Student
-{
-    public class Index
+﻿@model List<CheckGit.Models.Student>
+
+<h2>Students</h2>
+
+<a href="/Student/Create">Add Student</a>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var s in Model)
     {
+        <tr>
+            <td>@s.Name</td>
+            <td>
+                <a href="/Student/Delete/@s.Id">Delete</a>
+            </td>
+        </tr>
     }
-}
+</table>
